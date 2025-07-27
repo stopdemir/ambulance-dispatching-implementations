@@ -10,7 +10,7 @@ class GridHelper:
     def index_to_coord(self, index: int) -> Tuple[int, int]:
         return divmod(index, self.n)
 
-    def manhattan_distance(self, a: int, b: int) -> int:
+    def calculate_manhattan_distance(self, a: int, b: int) -> int:
         return abs(a[0] - b[0]) + abs(a[1] - b[1])
     
     

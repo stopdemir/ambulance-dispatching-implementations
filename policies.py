@@ -20,8 +20,8 @@ def dispatch_closest_ambulance(grid_size, available_ambulances, customer_locatio
     return best_ambulance
 
 
-#################### DISPATCH RANDOM AMBULANCE POLICY ###################
-def dispatch_random_ambulance(available_ambulances):
+#################### DISPATCH RANDOM AMBULANCE POLICY ################### 
+def dispatch_random_ambulance(grid_size, available_ambulances, customer_location):
     if not available_ambulances:
         return None
     return random.choice(available_ambulances)

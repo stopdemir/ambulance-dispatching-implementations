@@ -8,6 +8,8 @@ from Patient import Patient
 
 from helper_functions import GridHelper
 
+
+
 class Simulation:
     ############################ CONSTRUCTOR / INITIALIZATION OF ATTRIBUTES ###################
     def __init__(self, grid_size, ambu_locations, arr_rate, sim_duration, no_service_cells, dispatch_function, policy_name="Generic Policy"):
