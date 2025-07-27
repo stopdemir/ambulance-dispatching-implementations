@@ -35,7 +35,7 @@ class Simulation:
         
         self._initialize_simulation()
         
-    ############################# INITIALIZATION OF SIMULATION ############################
+    ############################# INITIALIZATION OF SIMULATION ########################
     def _initialize_simulation(self):
         # Schedule the first patient arrival
         self._schedule_next_arrival()
