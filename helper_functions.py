@@ -3,7 +3,8 @@ from typing import Tuple
 class GridHelper:
     def __init__(self, n: int):
         self.n: int = n
-
+    
+    # havent' used this yet, but it will be useful for converting coordinates to indices and vice versa
     def coord_to_index(self, x: int, y: int) -> int:
         return x * self.n + y
 
