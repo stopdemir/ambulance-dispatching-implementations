@@ -1,7 +1,7 @@
 import random
 from helper_functions import GridHelper
 
-################### DISPATCH CLOSEST AMBULANCE POLICY ###################
+################### DISPATCH CLOSEST AMBULANCE POLICY ##################
 def dispatch_closest_ambulance(grid_size, available_ambulances, customer_location):
     grid_object = GridHelper(n=grid_size[0]) # this is necessary to use the GridHelper class for distance calculations
     
