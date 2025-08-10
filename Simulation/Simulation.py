@@ -8,8 +8,6 @@ from Patient import Patient
 
 from helper_functions import GridHelper
 
-
-
 class Simulation:
     ############################ CONSTRUCTOR / INITIALIZATION OF ATTRIBUTES ###################
     def __init__(self, grid_size, ambu_locations, arr_rate, sim_duration, no_service_cells, dispatch_function, policy_name="Generic Policy"):
@@ -61,7 +59,7 @@ class Simulation:
     # this part also needs to modified according to the predetermined priority values of each cell
     def _generate_patient_priority(self):
         # For simplicity, assume 50/50 chance for H/L priority
-        return 'H' if random.random() < 0.5 else 'L'
+        return 0 if random.random() < 0.5 else 1
     
     # you may wanna focus on this part, especially usage of different mean for service time distribution for different location and ambulance location pairs
     def _generate_service_time(self, ambulance_location, patient_location):
@@ -84,8 +82,8 @@ class Simulation:
 
         available_ambulances = [amb for amb in self.ambulances if not amb.is_busy]
 
-        # This is where the chosen dispatch policy is applied!
-        chosen_ambulance = self.dispatch_function(self.grid_size, available_ambulances, patient_location)
+        # This is where the chosen dispatch policy is applied!!
+        chosen_ambulance = self.dispatch_function(self.grid_size, available_ambulances, patient)
         
         # if at least one ambulance is available
         if chosen_ambulance:

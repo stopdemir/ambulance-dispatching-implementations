@@ -2,7 +2,7 @@ import random
 from helper_functions import GridHelper
 
 ################### DISPATCH CLOSEST AMBULANCE POLICY ##################
-def dispatch_closest_ambulance(grid_size, available_ambulances, customer_location):
+def dispatch_closest_ambulance(grid_size, available_ambulances, patient):
     grid_object = GridHelper(n=grid_size[0]) # this is necessary to use the GridHelper class for distance calculations
     
     if not available_ambulances:
@@ -12,7 +12,7 @@ def dispatch_closest_ambulance(grid_size, available_ambulances, customer_locatio
     min_travel_time = float('inf')
 
     for amb in available_ambulances:
-        travel_time = grid_object.calculate_manhattan_distance(amb.location, customer_location)
+        travel_time = grid_object.calculate_manhattan_distance(amb.location, patient.location)
         if travel_time < min_travel_time:
             min_travel_time = travel_time
             best_ambulance = amb
@@ -21,7 +21,8 @@ def dispatch_closest_ambulance(grid_size, available_ambulances, customer_locatio
 
 
 #################### DISPATCH RANDOM AMBULANCE POLICY ################### 
-def dispatch_random_ambulance(grid_size, available_ambulances, customer_location):
+def dispatch_random_ambulance(grid_size, available_ambulances, patient):
+    # here we don't use all the arguments, just the available ambulances
     if not available_ambulances:
         return None
     return random.choice(available_ambulances)
